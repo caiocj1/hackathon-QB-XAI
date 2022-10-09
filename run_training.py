@@ -1,6 +1,6 @@
 import argparse
 
-from models.model_efficient import HackathonModel
+from models.model_unet import HackathonModel
 from dataset import HackathonDataset
 
 from torchvision.datasets import MNIST
@@ -42,8 +42,8 @@ if __name__ == '__main__':
                                  mode='max')
     lr_monitor = LearningRateMonitor()
 
-    trainer = Trainer(accelerator='gpu',
-                      devices=1,
+    trainer = Trainer(accelerator='cpu',
+                      #devices=1,
                       max_epochs=-1,
                       val_check_interval=30,
                       callbacks=[model_ckpt, lr_monitor],

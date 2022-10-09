@@ -37,7 +37,6 @@ if __name__ == '__main__':
     model.eval()
 
     has_silo = model(input)
-    out = torch.nn.Sigmoid()(has_silo)
     f = open("eval_outs/out.txt", "w")
-    f.write(f'{out}')
+    f.write(f'{has_silo}')
     f.close()
