@@ -185,8 +185,8 @@ class HackathonModel(LightningModule):
     def calc_metrics(self, prediction, target):
         metrics = {}
 
-        #prediction = prediction > 0
-        prediction = (nn.Sigmoid()(prediction) > 0.5)
+        prediction = prediction > 0
+        #prediction = (nn.Sigmoid()(prediction) > 0.5)
         batch_size = len(prediction)
 
         metrics['accuracy'] = (prediction == target).sum() / batch_size
