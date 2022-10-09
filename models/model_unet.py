@@ -8,7 +8,7 @@ class HackathonModel(LightningModule):
     def __init__(self):
         super(HackathonModel, self).__init__()
         self.build_model()
-        self.interesting_sample_indexes = list(range(0, 1000, 50))
+        self.interesting_sample_indexes = list(range(0, 1000, 25))
 
     def build_model(self):
         self.downsample1 = nn.Sequential(
