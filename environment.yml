@@ -1,0 +1,13 @@
+name: hackathon
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - numpy
+  - pytorch
+  - torchvision
+  - pytorch-lightning
+  - tensorboard
+  - pandas
+  - matplotlib
+  - textdistance
