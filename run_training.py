@@ -1,6 +1,6 @@
 import argparse
 
-from models.model_unet import HackathonModel
+from models.model_cnn import HackathonModel
 from dataset import HackathonDataset
 
 from torchvision.datasets import MNIST
@@ -38,8 +38,8 @@ if __name__ == '__main__':
     logger = TensorBoardLogger('.', version=args.version)
     model_ckpt = ModelCheckpoint(dirpath=f'lightning_logs/{args.version}/checkpoints',
                                  save_top_k=1,
-                                 monitor='loss_val',
-                                 mode='min')
+                                 monitor='accuracy_val',
+                                 mode='max')
     lr_monitor = LearningRateMonitor()
 
     trainer = Trainer(accelerator='gpu',
