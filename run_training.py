@@ -1,6 +1,6 @@
 import argparse
 
-from models.model_res_deeper import HackathonModel
+from models.model_cnn2 import HackathonModel
 from dataset import HackathonDataset
 
 from torchvision.datasets import MNIST
