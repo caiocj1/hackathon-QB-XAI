@@ -138,7 +138,7 @@ class HackathonModel(LightningModule):
             idx = batch_size * batch_idx + i
             if idx in self.interesting_sample_indexes:
                 fig = plt.figure()
-                plt.imshow(((output[i] > 0.5).float()).cpu().detach().numpy(), cmap='grey')
+                plt.imshow(((output[i] > 0.5).float()).cpu().detach().numpy(), cmap='Greys')
                 file = batch['filename'][i]
                 plt.savefig(f'segmentation_results/seg_{file}')
                 plt.close(fig)
